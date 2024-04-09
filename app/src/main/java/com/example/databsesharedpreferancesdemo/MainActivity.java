@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editTextText);
         textView = findViewById(R.id.textView);
 
-        SharedPreferences sp = getSharedPreferences("name", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("KeyOfData", MODE_PRIVATE);
         String def = sp.getString("name", "No Data is hear...");
         textView.setText(def);
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(v -> {
             String val = editText.getText().toString();
-            SharedPreferences sp1 = getSharedPreferences("name", MODE_PRIVATE);
+            SharedPreferences sp1 = getSharedPreferences("KeyOfData", MODE_PRIVATE);
             SharedPreferences.Editor editor = sp1.edit();
             editor.putString("name", val);
             editor.apply();
